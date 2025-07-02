@@ -33,11 +33,11 @@ async def main():
     async with CS2() as cs2:
         # Get live matches
         live_matches = await cs2.get_live_matches()
-        print(json.dumps(live_matches, indent=2))
+        print(json.dumps(live_matches, indent=4))
         
         # Get player transfers
         transfers = await cs2.get_player_transfers(31349)
-        print(json.dumps(transfers, indent=2))
+        print(json.dumps(transfers, indent=4))
 
 asyncio.run(main())
 ```
