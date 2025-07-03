@@ -1,7 +1,9 @@
 from .api import CS2APIClient
 from typing import Dict, Any, Optional
+
 import asyncio
 import datetime
+import aiohttp
 
 class CS2:
     """Main CS2 API wrapper interface"""
