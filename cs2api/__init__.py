@@ -11,13 +11,18 @@ class CS2:
         self.correct_date = None
     
     async def __aenter__(self):
-        await self._api.__aenter__()
+        """Enter async context manager"""
+        self.session = aiohttp.ClientSession(headers=self.headers)
         return self
-    
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        await self._api.__aexit__(exc_type, exc_val, exc_tb)
+        """Exit async context manager"""
+        if self.session:
+            await self.session.close()
+            self.session = None
 
     async def close(self):
+        """Close context manager"""
         await self._api.close()
 
     async def get_live_matches(self) -> Dict[str, Any]:
