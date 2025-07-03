@@ -5,7 +5,7 @@ A Python wrapper for BO3.gg's Counter-Strike 2 professional match statistics API
 [![PyPI Version](https://img.shields.io/pypi/v/cs2api)](https://pypi.org/project/cs2api/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/cs2api)](https://pypi.org/project/cs2api/)
 
-[![PyPI Downloads](https://static.pepy.tech/badge/sofascore-wrapper)](https://pepy.tech/projects/cs2api)
+[![PyPI Downloads](https://static.pepy.tech/badge/cs2api)](https://pepy.tech/projects/cs2api)
 
 ## Features
 
