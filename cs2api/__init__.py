@@ -14,14 +14,12 @@ class CS2:
     
     async def __aenter__(self):
         """Enter async context manager"""
-        self.session = aiohttp.ClientSession(headers=self.headers)
+        await self._api._ensure_session()  
         return self
-
+    
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         """Exit async context manager"""
-        if self.session:
-            await self.session.close()
-            self.session = None
+        await self._api.close()
 
     async def close(self):
         """Close context manager"""
